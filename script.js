@@ -1,11 +1,11 @@
 let currentURL = '';
 
-document.getElementById('urlInput').addEventListener('input', function () {
-  const url = this.value.trim();
+function generateModifiedURL() {
+  const url = document.getElementById('urlInput').value.trim();
   const ref = 'ref=refboyonchained.eth';
 
   if (!url) {
-    document.getElementById('output').innerText = '';
+    document.getElementById('output').innerText = 'Merci d’entrer une URL.';
     document.getElementById('copyButton').style.display = 'none';
     return;
   }
@@ -16,9 +16,9 @@ document.getElementById('urlInput').addEventListener('input', function () {
     currentURL = url + '?' + ref;
   }
 
-  document.getElementById('output').innerText = 'URL modifiée : ' + currentURL;
+  document.getElementById('output').innerText = '✅ URL modifiée : ' + currentURL;
   document.getElementById('copyButton').style.display = 'inline-block';
-});
+}
 
 function copyToClipboard() {
   navigator.clipboard.writeText(currentURL).then(() => {
