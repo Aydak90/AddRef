@@ -1,18 +1,19 @@
-function modifyURL() {
-  const url = document.getElementById('urlInput').value.trim();
-  const text = document.getElementById('textToAdd').value.trim();
+document.getElementById('urlInput').addEventListener('input', function () {
+  const url = this.value.trim();
+  const ref = 'ref=refboyonchained.eth';
 
-  if (!url || !text) {
-    alert("Merci de remplir l'URL et le texte à ajouter.");
+  if (!url) {
+    document.getElementById('output').innerText = '';
     return;
   }
 
   let modifiedURL;
+
   if (url.includes('?')) {
-    modifiedURL = url + '&' + text.replace(/^\?/, '');
+    modifiedURL = url + '&' + ref;
   } else {
-    modifiedURL = url + '?' + text.replace(/^\?/, '');
+    modifiedURL = url + '?' + ref;
   }
 
-  document.getElementById('output').innerText = "URL modifiée : " + modifiedURL;
-}
+  document.getElementById('output').innerText = 'URL modifiée : ' + modifiedURL;
+});
