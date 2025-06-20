@@ -1,19 +1,16 @@
-document.getElementById('urlInput').addEventListener('input', function () {
-  const url = this.value.trim();
-  const ref = 'ref=refboyonchained.eth';
-
-  if (!url) {
-    document.getElementById('output').innerText = '';
-    return;
-  }
-
-  let modifiedURL;
-
-  if (url.includes('?')) {
-    modifiedURL = url + '&' + ref;
-  } else {
-    modifiedURL = url + '?' + ref;
-  }
-
-  document.getElementById('output').innerText = 'URL modifiée : ' + modifiedURL;
-});
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>URL Ref Adder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ajoute automatiquement ton ref à une URL</h1>
+    <input type="text" id="urlInput" placeholder="Colle ton URL ici">
+    <p id="output"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
