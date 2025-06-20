@@ -2,7 +2,7 @@ let currentURL = '';
 
 function generateModifiedURL() {
   const url = document.getElementById('urlInput').value.trim();
-  const ref = 'ref=refboyonchained.eth';
+  const selectedRef = document.getElementById('refChoice').value;
 
   if (!url) {
     document.getElementById('output').innerText = 'Merci d’entrer une URL.';
@@ -11,9 +11,9 @@ function generateModifiedURL() {
   }
 
   if (url.includes('?')) {
-    currentURL = url + '&' + ref;
+    currentURL = url + '&' + selectedRef;
   } else {
-    currentURL = url + '?' + ref;
+    currentURL = url + '?' + selectedRef;
   }
 
   document.getElementById('output').innerText = '✅ URL modifiée : ' + currentURL;
