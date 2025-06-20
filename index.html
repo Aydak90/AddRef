@@ -7,9 +7,11 @@
 </head>
 <body>
   <div class="container">
-    <h1>Ajoute automatiquement ton ref à une URL</h1>
+    <h1>Ajoute ton ref à une URL</h1>
     <input type="text" id="urlInput" placeholder="Colle ton URL ici">
-    
+    <br>
+    <button id="generateButton" onclick="generateModifiedURL()">🚀 Obtenir le lien</button>
+
     <p id="output"></p>
     <button id="copyButton" onclick="copyToClipboard()" style="display: none;">📋 Copier le lien</button>
   </div>
