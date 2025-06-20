@@ -6,3 +6,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="container">
+    <h1>Ajoute ton ref à une URL</h1>
+
+    <input type="text" id="urlInput" placeholder="Colle ton URL ici">
+    <br><br>
+
+    <label for="refChoice">Choisis ton ref :</label>
+    <select id="refChoice">
+      <option value="ref=refboyonchained.eth">refboyonchained.eth</option>
+      <option value="ref=foutograve.eth">foutograve.eth</option>
+    </select>
+
+    <br><br>
+    <button id="generateButton" onclick="generateModifiedURL()">🚀 Obtenir le lien</button>
+    <br><br>
+
+    <p id="output"></p>
+    <button id="copyButton" onclick="copyToClipboard()" style="display: none;">📋 Copier le lien</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
